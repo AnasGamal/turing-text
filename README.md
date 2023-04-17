@@ -1,10 +1,11 @@
 Project Overview:
 PROJECT TURING TEXT
-The Turing Text project is an SMS text-based application designed to run the Turing Test between ChatGPT (an AI language model) and a human participant. The goal is to evaluate the AI's ability to imitate human-like conversation and determine whether it can be distinguished from a real person.
-The project involves multiple roles, including human agents (participants), evaluators (judges), and AI agents (ChatGPT). Human agents and evaluators are paired in the game, while AI agents participate by providing responses. The game proceeds by sending prompts to both human agents and AI agents, and they respond accordingly. Evaluators compare the responses and generate a result based on the similarity between AI-generated and human-generated responses.
-The system uses the Twilio API to enable communication through SMS messages. A delegator class analyzes incoming messages from users, assigns roles as human agents or evaluators, and pairs them for the game. The HelpTool generates prompts and notifies paired participants when they are ready to start the game.
-A Game class manages individual game sessions involving a human agent, an evaluator, and an AI agent. The GameBook class keeps track of all game sessions and saves the data for future analysis.
-Overall, the project aims to create an engaging, interactive experience where human participants and AI agents can communicate, and evaluators can assess the AI's performance in generating human-like conversation.
+[]The Turing Text project is an SMS text-based application designed to run the Turing Test between ChatGPT (an AI language model) and a human participant. []The goal is to evaluate the AI's ability to imitate human-like conversation and determine whether it can be distinguished from a real person.
+[]The project involves multiple roles, including human agents (participants), evaluators (judges), and AI agents (ChatGPT). Human agents and evaluators are paired in the game, while AI agents participate by providing responses. The game proceeds by sending prompts to both human agents and AI agents, and they respond accordingly. 
+[]Evaluators compare the responses and generate a result based on the similarity between AI-generated and human-generated responses.
+[]The system uses the Twilio API to enable communication through SMS messages. A delegator class analyzes incoming messages from users, assigns roles as human agents or evaluators, and pairs them for the game. The HelpTool generates prompts and notifies paired participants when they are ready to start the game.
+[]A Game class manages individual game sessions involving a human agent, an evaluator, and an AI agent. The GameBook class keeps track of all game sessions and saves the data for future analysis.
+[]Overall, the project aims to create an engaging, interactive experience where human participants and AI agents can communicate, and evaluators can assess the AI's performance in generating human-like conversation.
 
 
 Here's a summary of all the classes in the updated UML diagram, their responsibilities, and their relationships:
