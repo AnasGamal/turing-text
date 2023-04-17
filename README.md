@@ -55,4 +55,4 @@ Here's a summary of all the classes in the updated UML diagram, their responsibi
 
 These classes interact and collaborate to manage the game sessions, handle communication with users, delegate roles, and evaluate game results.
 
-![image](https://user-images.githubusercontent.com/95186419/232374317
+![image](https://user-images.githubusercontent.com/95186419/232374317-fa640684-239f-457b-9f28-5e3b678b75da.png)
