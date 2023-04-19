@@ -1,3 +1,43 @@
+# Getting Started
+
+## Installing GitHub CLI
+
+### MacOS
+
+1. Open the Terminal app on your Mac
+2. Run the command: `brew install gh`
+3. Wait for the installation process to finish
+
+### Windows
+
+1. Download the GitHub CLI installer from the official website: https://cli.github.com/
+2. Open the installer and follow the instructions on the screen
+3. Wait for the installation process to finish
+
+## Installing Git
+
+### MacOS
+
+1. Open the Terminal app on your Mac
+2. Run the command: `brew install git`
+3. Wait for the installation process to finish
+
+### Windows
+
+1. Download the Git installer from the official website: https://git-scm.com/download/win
+2. Open the installer and follow the instructions on the screen
+3. Wait for the installation process to finish
+
+## Pushing Changes from Local to Remote Repo
+
+1. Open the Terminal app on your computer
+2. Navigate to the local repository directory using the `cd` command
+3. Run the command: `git add .` to stage all the changes
+4. Run the command: `git commit -m "commit message"` to commit the changes with a message
+5. Run the command: `git push origin <branch-name>` to push the changes to the remote repository
+6. Enter your GitHub credentials when prompted
+7. Wait for the changes to be uploaded to the remote repository
+
 # Project Overview:
 
 ## PROJECT TURING TEXT
