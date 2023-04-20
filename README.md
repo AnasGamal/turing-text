@@ -27,7 +27,6 @@
 1. Download the Git installer from the official website: https://git-scm.com/download/win
 2. Open the installer and follow the instructions on the screen
 3. Wait for the installation process to finish
-## Cloning a Repository
 
 ## Authneticate your GitHub account
 
