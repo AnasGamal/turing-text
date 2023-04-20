@@ -28,15 +28,50 @@
 2. Open the installer and follow the instructions on the screen
 3. Wait for the installation process to finish
 
+## Authneticate your GitHub account
+
+The `gh auth` command is used to authenticate with GitHub. This command allows you to configure and manage your GitHub credentials directly from the command line.
+
+To use `gh auth`, follow these steps:
+
+1. Open the Terminal app on your computer
+2. Run the command: `gh auth login`
+3. Follow the prompts to authenticate with GitHub. You will be asked to provide your GitHub credentials (username and password), and you will need to complete two-factor authentication (if enabled).
+4. Choose the `GitHub.com` authentication method
+5. Once you have successfully authenticated, you can check your authentication status by running the command: `gh auth status`
+
+You can also use `gh auth` to configure other authentication settings, such as token scopes and expiry. For more information on using `gh auth`, you can run the command: `gh auth --help`.
+
+
+## To clone a repository from GitHub to your local machine:
+
+1. Open the Terminal app on your computer
+2. Navigate to the directory where you want to clone the repository using the `cd` command
+3. Run the command: `gh repo clone AnasGamal/turing-text`
+4. Wait for the cloning process to finish
 ## Pushing Changes from Local to Remote Repo
 
 1. Open the Terminal app on your computer
 2. Navigate to the local repository directory using the `cd` command
-3. Run the command: `git add .` to stage all the changes
-4. Run the command: `git commit -m "commit message"` to commit the changes with a message
-5. Run the command: `git push origin <branch-name>` to push the changes to the remote repository
-6. Enter your GitHub credentials when prompted
-7. Wait for the changes to be uploaded to the remote repository
+3. Make sure you are on the "evaluate" branch by running the command: `git checkout evaluate`
+4. Run the command: `git add .` to stage all the changes
+5. Run the command: `git commit -m "commit message"` to commit the changes with a message
+6. Run the command: `git push origin evaluate` to push the changes to the remote repository
+7. Enter your GitHub credentials when prompted
+8. Wait for the changes to be uploaded to the remote repository
+
+
+## Other Useful Git Commands
+
+Here are some other useful Git commands that you may need to use:
+
+- `git status`: shows the status of your local repository and any changes you have made
+- `git pull`: retrieves the latest changes from the remote repository and merges them with your local repository
+- `git branch`: shows a list of all branches in your local repository
+- `git checkout <branch-name>`: switches to the branch specified by `<branch-name>`
+- `git merge <branch-name>`: merges the branch specified by `<branch-name>` with your current branch
+- `git remote add <remote-name> <repository-url>`: adds a new remote repository with the specified name and URL
+- `git remote -v`: shows a list of all remote repositories connected to your local repository
 
 # Project Overview:
 
