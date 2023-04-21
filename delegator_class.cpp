@@ -18,7 +18,6 @@ class Delegator{
         Human player, judge;
         HelpTool tool;
         Twilio sms;
-        Gamebook g_b;
 
         string message = sms.getMessage();
 
@@ -44,7 +43,7 @@ class Delegator{
         void pair_human_agent_evaluator(){
                 tool.getPair;
                 g = new Game(string p_num, string j_num);
-                GB Gamebook -> addGame(g);
+                GB->addGame(g);
         }
 
         void setHuman(Human* h){
