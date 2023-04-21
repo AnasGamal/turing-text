@@ -18,6 +18,7 @@ class Delegator{
         Human player, judge;
         HelpTool tool;
         Twilio sms;
+        Gamebook g_b;
 
         string message = sms.getMessage();
 
