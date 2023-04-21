@@ -42,7 +42,7 @@ class Delegator{
 
         void pair_human_agent_evaluator(){
                 tool.getPair;
-                g = new game(string p_num, string j_num);
+                g = new Game(string p_num, string j_num);
                 GB Gamebook -> add game g;
         }
 
@@ -54,8 +54,8 @@ class Delegator{
                 GB = gb;
         }
 
-        void setGame(Game* g){
-                game = g;
+        void setGame(Game* G){
+                game = G;
         }
         
         void setAI(AI* a){
