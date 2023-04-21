@@ -46,27 +46,27 @@ class Delegator{
                 GB Gamebook -> add game g;
         }
 
-        void setHuman(Human*h){
+        void setHuman(Human* h){
                 hum = h;
         }
 
-        void setGamebook(Gamebook*gb){
+        void setGamebook(Gamebook* gb){
                 GB = gb;
         }
 
-        void setGame(Game*g){
+        void setGame(Game* g){
                 game = g;
         }
         
-        void setAI(AI*a){
+        void setAI(AI* a){
                 ai = a;
         }
 
-        void setTwilio(Twilio*t){
+        void setTwilio(Twilio* t){
                 twilio = t;
         }
 
-        void setPlayer(Player*p){
+        void setPlayer(Player* p){
                 player = p;
         }
 };
