@@ -8,10 +8,8 @@ class Delegator{
         queue<string> j_num;
         Gamebook* GB
         AI* ai;
-        Player* player;
-        HumanAgent* huma;
         Human* hum;
-        Game* game;
+        Helptool* help;
         Twilio* twilio;
 
         public:
@@ -54,10 +52,6 @@ class Delegator{
                 GB = gb;
         }
 
-        void setGame(Game* G){
-                game = G;
-        }
-        
         void setAI(AI* a){
                 ai = a;
         }
@@ -65,10 +59,8 @@ class Delegator{
         void setTwilio(Twilio* t){
                 twilio = t;
         }
-
-        void setPlayer(Player* p){
-                player = p;
+        
+        void setHelpTool(Helptool* ht){
+                help = ht;
         }
 };
-
-                               
