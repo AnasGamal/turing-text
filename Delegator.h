@@ -16,8 +16,17 @@ class Delegator{
         Human player, judge;
         HelpTool tool;
         Twilio sms;
+        Gamebook gamebook;
         
         string message = sms.getMessage;
+        
+        string get_p_num(){
+                return p_num;
+        }
+        
+        string get_j_num(){
+                return j_num;
+        }
 
         void addPlayerID() {
                 p_num.push(player.getPhoneNumber());
@@ -41,36 +50,24 @@ class Delegator{
         void pair_human_agent_evaluator(){
                 tool.getPair;
                 g = new Game(string p_num, string j_num);
-                GB->addGame(g);
+                gamebook->addGame(g);
         }
         
-        void pairWaiting(){
-              if (!delegator.get_p_num().empty() || !delegator.get_j_num.empty()){
-                      tool.waitlist;
-              }
+        bool pairWaiting(){
+                if (!get_p_num().empty() && !get_j_num.empty()){
+                        return true;    
+                }
+                else{
+                        return false;
+                }
         }
         
-        void is_game_question(string mesage){
-                
-        }
-  
-        void setHuman(Human* h){
-                hum = h;
-        }
-
-        void setGamebook(Gamebook* gb){
-                GB = gb;
-        }
-
-        void setAI(AI* a){
-                ai = a;
-        }
-
-        void setTwilio(Twilio* t){
-                twilio = t;
-        }
-        
-        void setHelpTool(Helptool* ht){
-                help = ht;
+        bool is_game_question(string message){
+               if (message -> j_num){
+                       return true;
+               }
+               else{
+                       return false;
+               }
         }
 };
