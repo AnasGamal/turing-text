@@ -51,6 +51,7 @@ class Delegator{
                 tool.getPair;
                 g = new Game(string p_num, string j_num);
                 gamebook->addGame(g);
+                g.start();
         }
         
         bool pairWaiting(){
