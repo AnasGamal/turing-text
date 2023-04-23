@@ -16,8 +16,8 @@ class Delegator{
         Human player, judge;
         HelpTool tool;
         Twilio sms;
-
-        string message = sms.getMessage();
+        
+        string message = sms.getMessage;
 
         void addPlayerID() {
                 p_num.push(player.getPhoneNumber());
@@ -43,7 +43,17 @@ class Delegator{
                 g = new Game(string p_num, string j_num);
                 GB->addGame(g);
         }
-
+        
+        void pairWaiting(){
+              if (!delegator.get_p_num().empty() || !delegator.get_j_num.empty()){
+                      tool.waitlist;
+              }
+        }
+        
+        void is_game_question(string mesage){
+                
+        }
+  
         void setHuman(Human* h){
                 hum = h;
         }
