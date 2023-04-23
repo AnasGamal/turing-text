@@ -54,7 +54,7 @@ class Delegator{
         }
         
         bool pairWaiting(){
-                if (!get_p_num().empty() && !get_j_num.empty()){
+                if (!get_p_num().empty() && !get_j_num().empty()){
                         return true;    
                 }
                 else{
