@@ -60,8 +60,6 @@ std::string read_api_key_from_file() {
 
 int main() {
     string api_key = read_api_key_from_file();
-
-    string question = "What is the capital of France?";
     string response = askGPT(question, api_key);
     cout << "AI response: " << response << endl;
 }
