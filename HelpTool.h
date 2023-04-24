@@ -9,6 +9,7 @@ class Helptool{
   string judge = "You are now a judge. Ask questions to both a human player and an AI and figure out which is the human";
   string waitlist = "Please wait to be paired with another number";
   string pair = "You have been paired. Time to begin!";
+  string error = "Your response is invalid.";
 }
 public:
 string getinstructions(){
@@ -31,7 +32,11 @@ string getWait(){
   return waitlist;
 }
 
-string getPair()
+string getPair(){
   return pair;
+}
+
+string getError(){
+  return error;
 }
 };
