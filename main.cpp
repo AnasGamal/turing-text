@@ -29,11 +29,26 @@ int main() {
 	cout << "Please enter your phone number." << endl;
 	getline(cin, phoneNum);
 	player.setPhoneNumber(phoneNum);
+	//get account SID, authtoken, twilio#
+	
+	cout << "Please enter your Twilio phone number." << endl;'
+	getline(cin, twilioNum);
+	player.setTwilioNumber(twilioNum);
+
+	cout << "Please enter your account SID." << endl;'
+	getline(cin, accountSID);
+	player.setAccountSID(accountSID);
+
+	cout << "Please enter your Twilio authorization token." << endl;'
+	getline(cin, authToken);
+	player.setAuthToken(authToken);
+
+	TwilioClient client(player.getAccountSID(), player.getAuthToken(), player.getTwilioNum())
 	
 	//when is this initial message sent?
 	//need an if statement asking if there is a message waiting?
 	string initial message =  "Welcome to Twilio Message SMS, do you want to be a player or judge?";
-	twilio.send_message(initial_message, phoneNum);
+	client.send_sms(phoneNum, initial_message);
 	bool gameActive = true;
 
 	//if a message from user has been received (boolean)
@@ -49,7 +64,7 @@ int main() {
 	}
 	//if player phoneNum has been added to judge or player queue
 	if (!player.getRole().empty()) {//if the player has a role assigned 
-		Game *current = game.getActiveGames().end();
+		Game *current = game.getActiveGames().end();i//.back()
 		//if a pair is matched 
 		if (delegator.pairWaiting()) {
 			delegator.pair_human_agent_evaluator();
