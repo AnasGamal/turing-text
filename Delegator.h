@@ -18,7 +18,7 @@ class Delegator{
         Twilio sms;
         Gamebook gamebook;
         
-        string message = sms.getMessage;
+        string message = sms.send_message();
         
         string get_p_num(){
                 return p_num;
