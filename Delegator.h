@@ -10,7 +10,7 @@ class Delegator{
         Gamebook* GB;
         AI* ai;
         Helptool* help;
-        Twilio* twilio;
+        TwilioClient* twilio;
 
         public:
         void analyze_request(string message, string number){
@@ -19,7 +19,7 @@ class Delegator{
                 if (g != NULL){
                         if(g->findRole(player) == "Judge"){  
                             if(){
-                                    twilio -> send_message(message, p_num);
+                                    twilio -> send_sms(p_num, message);
                             }
                             else{
                                     ai -> askGPT(message);
@@ -29,7 +29,7 @@ class Delegator{
                         if(g->findRole(player) == "Player"){
                              //we know this person is a player
                              // this player has a responded to a judge's question, so we need to send the sms to twilio
-                             twilio -> send_message(message, j_num);
+                             twilio -> send_sms(j_num, message);
                         }
                 }
                 
