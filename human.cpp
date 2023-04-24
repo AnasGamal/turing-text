@@ -4,6 +4,9 @@ using namespace std;
 class Human {
 	string phoneNumber;
 	string role;
+	string accountSID;
+	string authToken;
+	string twilioNum;
 
 	public:
 	void setPhoneNumber(string phoneNumber) {
@@ -17,5 +20,23 @@ class Human {
 	}
 	string getRole() {
 		return role;
+	}
+	void setAccountSID(string accountSID) {
+		this -> accountSID = accountSID;
+	}
+	string getAccountSID() {
+		return accountSID;
+	}
+	void setAuthToken(string authToken) {
+		this -> authToken = authToken;
+	}
+	string getAuthToken() {
+		return authToken;
+	}
+	void setTwilioNum(string twilioNum) {
+		this -> twilioNum = twilioNum;
+	}
+	string getTwilioNum() {
+		return twilioNum;
 	}
 };
