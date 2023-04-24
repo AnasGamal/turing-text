@@ -6,28 +6,12 @@ using namespace std;
 class Delegator{
         queue<string> p_num;
         queue<string> j_num;
-        Gamebook* GB
+        Gamebook* GB;
         AI* ai;
-        Human* hum;
         Helptool* help;
         Twilio* twilio;
 
         public:
-        Human player, judge;
-        HelpTool tool;
-        Twilio sms;
-        Gamebook gamebook;
-        
-        string message = sms.getMessage;
-        
-        string get_p_num(){
-                return p_num;
-        }
-        
-        string get_j_num(){
-                return j_num;
-        }
-
         void addPlayerID() {
                 p_num.push(player.getPhoneNumber());
         }
@@ -36,7 +20,7 @@ class Delegator{
                 j_num.push(judge.getPhoneNumber());
         }
 
-        void analyze_request(string message){
+        void analyze_request(string message, string number){
                 if (message == "Player"){
                         addPlayerID();
                         tool.getPlayer();
@@ -47,8 +31,8 @@ class Delegator{
                 }
         }
 
-        void pair_human_agent_evaluator(){
-                tool.getPair;
+        void pair_human_agent_evaluator(string p_num, string j_num){
+                tool.getPair();
                 g = new Game(string p_num, string j_num);
                 gamebook->addGame(g);
                 g.start();
