@@ -24,8 +24,7 @@ class Delegator{
                         if(g->findRole(player) == "Player"){
                              //we know this person is a player
                              // this player has a responded to a judge's question, so we need to send the sms to twilio
-                             twilio -> send_message();
-                             
+                             twilio -> send_message(message, j_num);
                         }
                    }
                 }
