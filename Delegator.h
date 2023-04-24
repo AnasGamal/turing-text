@@ -6,7 +6,7 @@ using namespace std;
 class Delegator{
         queue<string> p_num;
         queue<string> j_num;
-        Gamebook* GB
+        Gamebook* GB;
         AI* ai;
         Human* hum;
         Helptool* help;
