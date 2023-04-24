@@ -18,11 +18,30 @@ class Delegator{
                 Game *g = GB->inGame(number);
                 if (g != NULL){
                         if(g->findRole(player) == "Judge"){  
-                            if(){
-                                    twilio -> send_sms(p_num, message);
+                            //we know that this person is a judge
+                            //the judge asks either the ai or the player a question
+                            //we need to somehow determine whether the judge is either messaging the player or the ai
+                            //the game class randomizes whether the player is either player a or player b; same with the ai
+                            // if the message contains player a in it and if player a is assigned to the human, then we send the question to the player
+                            // if the message contains player b in it and if player b is assigned to the human, then we send the question to the player
+                            // if the message contains player a in it and if player a is assigned to the ai, then we send the question to the ai
+                            // if the message contains player b in it and if player b is assigned to the ai, then we send the question to the ai
+                            if(message.find("Player A") || message.find("player A") || message.find("Player a") || message.find("player a")){
+                                if(Player = A){
+                                        twilio -> send_sms(p_num, message);
+                                }
+                                else{
+                                        ai -> askGPT(message);
+                                }
                             }
-                            else{
-                                    ai -> askGPT(message);
+                            
+                            if(message.find("Player B") || message.find("player B") || message.find("Player b") || message.find("player b")){
+                                if(Player = B){
+                                        twilio -> send_sms(p_num, message);
+                                    }
+                                else{
+                                        ai -> askGPT(message);
+                                }
                             }
                         }
                 
@@ -34,12 +53,12 @@ class Delegator{
                 }
                 
                 if (asked_player_judge.contains(number)){
-                        if (message == "Player"){
+                        if (message.find("Player") || message.find("player")){
                                 p_num.push(number);
                                 help->getPlayer();
                         }
                         
-                        if (message == "Judge"){
+                        if (message.find("Judge") || message.find("judge")){
                                 j_num.push(number);
                                 help->getJudge();  
                         }
