@@ -22,7 +22,7 @@ class Delegator{
                                     twilio -> send_message(message, p_num);
                             }
                             else{
-                                    twilio -> send_message();
+                                    ai -> askGPT(message);
                             }
                         }
                 
