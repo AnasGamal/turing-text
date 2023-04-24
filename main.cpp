@@ -1,9 +1,3 @@
-//Missing Functions Still Needed:
-//twilio.receive_message() or sms.getMessage()
-//getter for the active_games vector in gamebook
-//helptool.generatePrompt()?
-//where to use game.start() function?
-
 #include <iostreamm>
 #include "Delegator.h"
 #include "HelpTool.h"
@@ -13,17 +7,17 @@
 #include "Results.h"
 #include "GameBook.h"
 #include "Game.h"
+#include "Server.h"
 using namespace std;
 
 int main() {
-	Delegator delegator;	
-	HelpTool tool;
+	Delegator *delegator = new Delegator();	
+	//HelpTool tool;
 	Human player;
-	AI ai;
-	Twilio twilio;
-	GameBook gamebook;
-	string phoneNum, aiResponse;
-	string api_key = read_api_key_from_file();
+	//AI ai;
+	//GameBook *gamebook;
+	string phoneNum, accountSID, authToken, twilioNum;
+	//string api_key = read_api_key_from_file();
 	
 	//how to get this as a user_message?
 	cout << "Please enter your phone number." << endl;
@@ -43,7 +37,10 @@ int main() {
 	getline(cin, authToken);
 	player.setAuthToken(authToken);
 
-	TwilioClient client(player.getAccountSID(), player.getAuthToken(), player.getTwilioNum())
+	//call server
+	server.start_twilio();
+
+	/*TwilioClient client(player.getAccountSID(), player.getAuthToken(), player.getTwilioNum())
 	
 	//when is this initial message sent?
 	//need an if statement asking if there is a message waiting?
@@ -64,7 +61,7 @@ int main() {
 	}
 	//if player phoneNum has been added to judge or player queue
 	if (!player.getRole().empty()) {//if the player has a role assigned 
-		Game *current = game.getActiveGames().end();i//.back()
+		Game *current = game.getActiveGames().end();//.back()
 		//if a pair is matched 
 		if (delegator.pairWaiting()) {
 			delegator.pair_human_agent_evaluator();
@@ -77,5 +74,6 @@ int main() {
 			gamebook.removeGame(current);
 			game.end();
 		}
-	}
+	}*/
+	//call server
 }
