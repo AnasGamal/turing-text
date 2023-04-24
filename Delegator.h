@@ -18,15 +18,19 @@ class Delegator{
                 Game *g = GB->inGame(number);
                 if (g != NULL){
                         if(g->findRole(player) == "Judge"){  
-                            if(   
+                            if(){
+                                    twilio -> send_message(message, p_num);
+                            }
+                            else{
+                                    twilio -> send_message();
+                            }
                         }
-                        
+                
                         if(g->findRole(player) == "Player"){
                              //we know this person is a player
                              // this player has a responded to a judge's question, so we need to send the sms to twilio
                              twilio -> send_message(message, j_num);
                         }
-                   }
                 }
                 
                 if (asked_player_judge.contains(number)){
