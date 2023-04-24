@@ -62,6 +62,7 @@ class TwilioServer
 				std::string request_json = request_ostream.str();
 				std::cout << "Received request JSON: " << request_json << std::endl;
 
+				//get the response from the user
 				std::string response_body = request_ptree.get<std::string>("Body.Body");
 
 				if (response_body == "yes")
@@ -140,12 +141,12 @@ class TwilioClient
 
 int main()
 {
-	std::string account_sid = "accountSID";
-	std::string auth_token = "authtoken";
-	std::string from_number = "twilio#";
+	std::string account_sid = "ACa930b837f18e77aaf249303b6f91288b";
+	std::string auth_token = "d2caecaebb0f0c4c80b7984e13f28272";
+	std::string from_number = "+18557381564";
 	TwilioClient client(account_sid, auth_token, from_number);
 
-	std::string to_number = "your number";
+	std::string to_number = "+18135974145";
 	std::string message = "Welcome to Turing Text! Do you want to play the game?";
 	client.send_sms(to_number, message);
 
