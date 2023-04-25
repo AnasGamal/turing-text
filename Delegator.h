@@ -32,7 +32,7 @@ class Delegator{
                                         twilio -> send_sms(p_num, message);
                                 }
                                 else{
-                                        ai -> askGPT(message);
+                                        ai -> askGPT(message, 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);
                                 }
                             }
                             
@@ -41,7 +41,7 @@ class Delegator{
                                         twilio -> send_sms(p_num, message);
                                     }
                                 else{
-                                        ai -> askGPT(message);
+                                        ai -> askGPT(message, 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);
                                 }
                             }
                         }
