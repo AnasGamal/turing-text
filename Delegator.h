@@ -67,7 +67,7 @@ class Delegator{
                 }
                 else{
                      help -> error();
-                     help -> instructions();
+                     help -> initial_request();
                 }
         }
 
