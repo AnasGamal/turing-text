@@ -3,7 +3,6 @@ using namespace std;
 
 class Human {
 	string phoneNumber;
-	string role;
 	string accountSID;
 	string authToken;
 	string twilioNum;
@@ -14,12 +13,6 @@ class Human {
 	}
 	string getPhoneNumber() {
 		return phoneNumber;
-	}
-	void setRole(string role) {
-		this ->role = role;
-	}
-	string getRole() {
-		return role;
 	}
 	void setAccountSID(string accountSID) {
 		this -> accountSID = accountSID;
