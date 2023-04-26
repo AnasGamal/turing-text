@@ -22,11 +22,17 @@ set(SOURCES ${SRC_DIR}/AiClass.cpp
             ${SRC_DIR}/Human.cpp
             ${SRC_DIR}/main.cpp)
 
-# Define the executable target
-add_executable(${PROJECT_NAME} ${SOURCES})
+# Loop over each source file and create an executable for each one
+foreach(SOURCE_FILE ${SOURCES})
+    # Extract the name of the source file without the extension
+    get_filename_component(EXEC_NAME ${SOURCE_FILE} NAME_WE)
 
-# Add any required libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE cpr nlohmann_json)
+    # Add the source file to the executable
+    add_executable(${EXEC_NAME} ${SOURCE_FILE})
 
-# Set compiler flags
-target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -pedantic)
+    # Add any required libraries
+    target_link_libraries(${EXEC_NAME} PRIVATE cpr nlohmann_json)
+
+    # Set compiler flags
+    target_compile_options(${EXEC_NAME} PRIVATE -Wall -Wextra -pedantic)
+endforeach()
