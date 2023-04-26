@@ -23,11 +23,11 @@ public:
         this->human_agent = human_agent;
         this->evaluator = evaluator;
         this->ai_agent = ai_agent;
-        this->result = nullptr;
+        this->result = results;
     }
 
     void start() {
-        // Randomly assign roles to players
+        /*
         bool human_is_judge = rand() % 2 == 0;
         string human_role = human_is_judge ? "Judge" : "Player";
         string ai_role = human_is_judge ? "Player" : "Judge";
@@ -35,10 +35,21 @@ public:
         // Create player objects based on their roles
         HumanAgent *human_agent = human_is_judge ? new Judge() : new Player();
         AI* ai_agent = !human_is_judge ? new Judge() : new Player();
+        */
 
         // Set the instance of each player to the game
         Game game(human_agent, evaluator, ai_agent);
 
+        // Randomly assign roles to players
+        srand(time(nullptr));
+        int randomNum = rand() % 2;
+        if (randomNum == 0) {
+            return "A";
+        } else {
+            return "B";
+        }
+
+        /*
         // Send prompt to human agent and AI agent
         cout << "Sending prompt to " << human_agent->get_type() << " and " << ai_agent->get_type() << endl;
 
@@ -51,13 +62,14 @@ public:
         cout << "Sending responses to " << evaluator->get_type() << endl;
         cout << human_agent->get_type() << " (" << human_role << ") response: " << humanResponse << endl;
         cout << ai_agent->get_type() << " (" << ai_role << ") response: " << aiResponse << endl;
+         */
     }
-
 
     void createPlayer(string phoneNum){
         playerAB[phoneNum] = defineLetter();
     }
 
+    /*
     string defineLetter() {
         srand(time(nullptr));
 
@@ -69,6 +81,7 @@ public:
             return "B";
         }
     }
+     */
 
     string playerLetter(string phoneNum){
         try {
@@ -83,16 +96,16 @@ public:
         string aiPrediciton; //Player A or B
         double finalScoreA;
         double finalScoreB;
-        if (evaluator_score1 > evaluator_score2) {
+        if (finalScoreA > finalScoreB) {
             aiPrediciton = "A";
             score = Results.getScore();
             comparison = Results.getComparison();
-            Results *results = new Results(score, comparison);
+            results = new Results(score, comparison);
         } else {
             aiPrediciton = "B";
             score = Results.getScore();
             comparison = Results.getComparison();
-            Results *results = new Results(score, comparison);
+            results = new Results(score, comparison);
         }
     }
 
@@ -156,20 +169,6 @@ public:
             }
         }
     }
-
-    /*
-    void saveData() {
-        void writeLog(const string& currentGame, const string& conversationLog) {
-            // Open the file for writing
-            ofstream file("Game" + currentGame + "_log.txt");
-
-            // Write the conversation log to the file (Where is this written?)
-            file << conversationLog << endl;
-
-            file.close();
-        }
-    }
-     */
 
 };
 
