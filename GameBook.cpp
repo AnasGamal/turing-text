@@ -5,25 +5,55 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "human.cpp"
+#include "AiClass.h"
 
 using namespace std;
+
+class Results {
+private:
+    double score;
+    string comparison;
+
+public:
+    Results(double score, string comparison) {
+        this->score = score;
+        this->comparison = comparison;
+    }
+
+    double getScore() const {
+        return score;
+    }
+
+    string getComparison() const {
+        return comparison;
+    }
+
+    void setScore(double score) {
+        this->score = score;
+    }
+
+    void setComparison(string comparison) {
+        this->comparison = comparison;
+    }
+};
 
 class Game {
 private:
     Human *human_agent;
     Human *evaluator;
     Ai *ai_agent;
+    Results *results;
     vector<string> prompts;
     map<string, string> responses;
-    Results *result;
     map<string, string> playerAB;
 
 public:
-    Game(Human *human_agent, Human *evaluator, AI *ai_agent, Results *result) {
+    Game(Human *human_agent, Human *evaluator, Ai *ai_agent, Results *result) {
         this->human_agent = human_agent;
         this->evaluator = evaluator;
         this->ai_agent = ai_agent;
-        this->result = results;
+        this->results = results;
     }
 
     void start() {
@@ -38,7 +68,7 @@ public:
         */
 
         // Set the instance of each player to the game
-        Game game(human_agent, evaluator, ai_agent);
+        new Game(human_agent, evaluator, ai_agent, results);
 
         // Randomly assign roles to players
         srand(time(nullptr));
@@ -69,7 +99,6 @@ public:
         playerAB[phoneNum] = defineLetter();
     }
 
-    /*
     string defineLetter() {
         srand(time(nullptr));
 
@@ -81,7 +110,6 @@ public:
             return "B";
         }
     }
-     */
 
     string playerLetter(string phoneNum){
         try {
@@ -96,15 +124,17 @@ public:
         string aiPrediciton; //Player A or B
         double finalScoreA;
         double finalScoreB;
+        double score;
+        string comparison;
         if (finalScoreA > finalScoreB) {
             aiPrediciton = "A";
-            score = Results.getScore();
-            comparison = Results.getComparison();
+            score = results->getScore();
+            comparison = results->getComparison();
             results = new Results(score, comparison);
         } else {
             aiPrediciton = "B";
-            score = Results.getScore();
-            comparison = Results.getComparison();
+            score = results->getScore();
+            comparison = results->getComparison();
             results = new Results(score, comparison);
         }
     }
@@ -115,16 +145,16 @@ public:
         } else if(phoneNum == evaluator->getPhoneNumber()) {
             return "Judge";
         } else {
-            return NULL;
+            return "Unknown";
         }
     }
     
     string player_num(){
-        return human_agent->getPhoneNumber;
+        return human_agent->getPhoneNumber();
     }
     
     string judge_num(){
-        return evaluator->getPhoneNumber;
+        return evaluator->getPhoneNumber();
     }
 
     void save_game_data(GameBook *game_book) {
@@ -141,7 +171,8 @@ public:
 
 class GameBook {
 private:
-    vector<Game*> active_games;
+    //vector<Game*> active_games;
+    map<string, Game*> active_games;
 
 public:
     static GameBook& getInstance() {
@@ -172,30 +203,4 @@ public:
 
 };
 
-class Results {
-private:
-    double score;
-    string comparison;
 
-public:
-    Results(double score, string comparison) {
-        this->score = score;
-        this->comparison = comparison;
-    }
-
-    double getScore() const {
-        return score;
-    }
-
-    string getComparison() const {
-        return comparison;
-    }
-
-    void setScore(double score) {
-        this->score = score;
-    }
-
-    void setComparison(string comparison) {
-        this->comparison = comparison;
-    }
-};

@@ -1,0 +1,3 @@
+C:/Users/jerbh/Desktop/turing-text/cmake-build-debug/CMakeFiles/turing-text.dir
+C:/Users/jerbh/Desktop/turing-text/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/jerbh/Desktop/turing-text/cmake-build-debug/CMakeFiles/rebuild_cache.dir
