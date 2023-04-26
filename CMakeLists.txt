@@ -1,9 +1,17 @@
 cmake_minimum_required(VERSION 3.0)
 project(turing-text)
 
-# Find all source and header files in the current directory
-file(GLOB SOURCES *.cpp)
-file(GLOB HEADERS *.h)
+# Add all the source files
+set(SOURCES
+    AiClass.cpp
+    Delegator.h
+    GameBook.cpp
+    GameBook.h
+    HelpTool.h
+    human.cpp
+    main.cpp
+    twilio.cpp
+)
 
 # Add the executable target
-add_executable(MyProject ${SOURCES} ${HEADERS})
+add_executable(turing-text ${SOURCES})
