@@ -10,33 +10,33 @@ class Helptool{
   string waitlist = "Please wait to be paired with another number";
   string pair = "You have been paired. Time to begin!";
   string error = "Your response is invalid.";
-}
+
 public:
-string getinstructions(){
-  return instructions;
-}
+  string getinstructions(){
+    return instructions;
+  }
 
-string getInitial(){
-  return initial_request;
-}
+  string getInitial(){
+    return initial_request;
+  }
 
-string getPlayer(){
-  return player;
-}
+  string getPlayer(){
+    return player;
+  }
 
-string getJudge(){
-  return judge;
-}
+  string getJudge(){
+    return judge;
+  }
 
-string getWait(){
-  return waitlist;
-}
+  string getWait(){
+    return waitlist;
+  }
 
-string getPair(){
-  return pair;
-}
+  string getPair(){
+    return pair;
+  }
 
-string getError(){
-  return error;
-}
+  string getError(){
+    return error;
+  }
 };
