@@ -19,7 +19,7 @@ private:
     map<string, string> playerAB;
 
 public:
-    Game(HumanAgent* human_agent, Evaluator* evaluator, AI* ai_agent) {
+    Game(Human* human_agent, Human* evaluator, AI* ai_agent, Results* result) {
         this->human_agent = human_agent;
         this->evaluator = evaluator;
         this->ai_agent = ai_agent;
