@@ -1,38 +1,9 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.0)
 project(turing-text)
 
-set(CMAKE_CXX_STANDARD 17)
+# Find all source and header files in the current directory
+file(GLOB SOURCES *.cpp)
+file(GLOB HEADERS *.h)
 
-# Set the paths for the include directories and source files
-set(INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
-set(SRC_DIR "${PROJECT_SOURCE_DIR}/src")
-
-# Add the include directories to the include path
-include_directories(${INCLUDE_DIR})
-
-# Define the source files
-set(SOURCES ${SRC_DIR}/AiClass.cpp
-            ${SRC_DIR}/Delegator.h
-            ${SRC_DIR}/Delegator.cpp
-            ${SRC_DIR}/GameBook.h
-            ${SRC_DIR}/GameBook.cpp
-            ${SRC_DIR}/HelpTool.h
-            ${SRC_DIR}/HelpTool.cpp
-            ${SRC_DIR}/Human.h
-            ${SRC_DIR}/Human.cpp
-            ${SRC_DIR}/main.cpp)
-
-# Loop over each source file and create an executable for each one
-foreach(SOURCE_FILE ${SOURCES})
-    # Extract the name of the source file without the extension
-    get_filename_component(EXEC_NAME ${SOURCE_FILE} NAME_WE)
-
-    # Add the source file to the executable, with a unique name
-    add_executable(${PROJECT_NAME}_${EXEC_NAME} ${SOURCE_FILE})
-
-    # Add any required libraries
-    target_link_libraries(${PROJECT_NAME}_${EXEC_NAME} PRIVATE cpr nlohmann_json)
-
-    # Set compiler flags
-    target_compile_options(${PROJECT_NAME}_${EXEC_NAME} PRIVATE -Wall -Wextra -pedantic)
-endforeach()
+# Add the executable target
+add_executable(MyProject ${SOURCES} ${HEADERS})
