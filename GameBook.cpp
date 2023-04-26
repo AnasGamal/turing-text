@@ -105,6 +105,14 @@ public:
             return NULL;
         }
     }
+    
+    string player_num(){
+        return human_agent->getPhoneNumber;
+    }
+    
+    string judge_num(){
+        return evaluator->getPhoneNumber;
+    }
 
     void save_game_data(GameBook *game_book) {
         game_book->addGame(this);
