@@ -14,10 +14,12 @@ class Delegator{
         TwilioClient* twilio;
 
         public:
-        void analyze_request(string message, string number){
+        void analyze_request(string message, string number, string p_num, string j_num){
+                //number = current number; p_num = player number; j_num = judge number
                 asked_player_judge.push(number);
                 Game *g = GB->inGame(number);
                 if (g != NULL){
+                        asked_player_judge.erase(number);
                         if(g->findRole(number) == "Judge"){  
                             //we know that this person is a judge
                             //the judge asks either the ai or the player a question
@@ -28,7 +30,7 @@ class Delegator{
                             // if the message contains player a in it and if player a is assigned to the ai, then we send the question to the ai
                             // if the message contains player b in it and if player b is assigned to the ai, then we send the question to the ai
                             if(message.find("Player A") || message.find("player A") || message.find("Player a") || message.find("player a")){
-                                if(g->playerLetter(p_num) = "A"){//however Jeremy and Rayan assign the player to either A or B in game class
+                                if(g->playerLetter(p_num) = "A"){
                                         twilio -> send_sms(p_num, message);
                                 }
                                 else{
@@ -37,7 +39,7 @@ class Delegator{
                             }
                             
                             if(message.find("Player B") || message.find("player B") || message.find("Player b") || message.find("player b")){
-                                if(g->playerLetter(p_num) = "B"){//however Jeremy and Rayan assign the player to either A or B in game class
+                                if(g->playerLetter(p_num) = "B"){
                                         twilio -> send_sms(p_num, message);
                                     }
                                 else{
