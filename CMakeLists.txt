@@ -10,17 +10,8 @@ set(SRC_DIR "${PROJECT_SOURCE_DIR}/src")
 # Add the include directories to the include path
 include_directories(${INCLUDE_DIR})
 
-# Define the source files
-set(SOURCES ${SRC_DIR}/AiClass.cpp
-            ${SRC_DIR}/Delegator.h
-            ${SRC_DIR}/Delegator.cpp
-            ${SRC_DIR}/GameBook.h
-            ${SRC_DIR}/GameBook.cpp
-            ${SRC_DIR}/HelpTool.h
-            ${SRC_DIR}/HelpTool.cpp
-            ${SRC_DIR}/Human.h
-            ${SRC_DIR}/Human.cpp
-            ${SRC_DIR}/main.cpp)
+# Find all the source files in the src directory
+file(GLOB SOURCES "${SRC_DIR}/*.cpp")
 
 # Define the executable target
 add_executable(${PROJECT_NAME} ${SOURCES})
