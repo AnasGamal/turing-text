@@ -16,7 +16,7 @@ class Delegator{
         public:
         void analyze_request(string message, string number, string p_num, string j_num){
                 //number = current number; p_num = player number; j_num = judge number
-                asked_player_judge.push(number);
+                asked_player_judge.insert(number);
                 Game *g = GB->inGame(number);
                 if (g != NULL){
                         asked_player_judge.erase(number);
