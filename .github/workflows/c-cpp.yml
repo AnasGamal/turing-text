@@ -1,0 +1,41 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate CMake file
+      run: |
+        # generate CMake file here
+        cmake -S . -B build
+      working-directory: ${{ github.workspace }}
+
+    - name: Check for changes
+      run: git fetch
+      working-directory: ${{ github.workspace }}
+
+    - name: Merge changes
+      run: git merge origin/main
+      working-directory: ${{ github.workspace }}
+
+    - name: configure
+      run: cmake --build build --config Release
+      working-directory: ${{ github.workspace }}
+
+    - name: make check
+      run: ctest -C Release -V
+      working-directory: ${{ github.workspace }}
+
+    - name: make distcheck
+      run: make distcheck
+      working-directory: ${{ github.workspace }}
