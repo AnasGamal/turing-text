@@ -57,7 +57,7 @@ class Delegator{
                         }
                 }
 
-                 if (asked_player_judge.find(number)){
+                 if (asked_player_judge.find(number) != asked_player_judge.end()){
                         if (message.find("Player") || message.find("player")){
                                 p_num.push(number);
                                 help -> getPlayer();
