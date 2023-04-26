@@ -10,14 +10,29 @@ set(SRC_DIR "${PROJECT_SOURCE_DIR}/src")
 # Add the include directories to the include path
 include_directories(${INCLUDE_DIR})
 
-# Find all the source files in the src directory
-file(GLOB SOURCES "${SRC_DIR}/*.cpp")
+# Define the source files
+set(SOURCES ${SRC_DIR}/AiClass.cpp
+            ${SRC_DIR}/Delegator.h
+            ${SRC_DIR}/Delegator.cpp
+            ${SRC_DIR}/GameBook.h
+            ${SRC_DIR}/GameBook.cpp
+            ${SRC_DIR}/HelpTool.h
+            ${SRC_DIR}/HelpTool.cpp
+            ${SRC_DIR}/Human.h
+            ${SRC_DIR}/Human.cpp
+            ${SRC_DIR}/main.cpp)
 
-# Define the executable target
-add_executable(${PROJECT_NAME} ${SOURCES})
+# Loop over each source file and create an executable for each one
+foreach(SOURCE_FILE ${SOURCES})
+    # Extract the name of the source file without the extension
+    get_filename_component(EXEC_NAME ${SOURCE_FILE} NAME_WE)
 
-# Add any required libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE cpr nlohmann_json)
+    # Add the source file to the executable
+    add_executable(${EXEC_NAME} ${SOURCE_FILE})
 
-# Set compiler flags
-target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -pedantic)
+    # Add any required libraries
+    target_link_libraries(${EXEC_NAME} PRIVATE cpr nlohmann_json)
+
+    # Set compiler flags
+    target_compile_options(${EXEC_NAME} PRIVATE -Wall -Wextra -pedantic)
+endforeach()
