@@ -59,12 +59,12 @@ class Delegator{
 
                  if (asked_player_judge.find(number)){
                         if (message.find("Player") || message.find("player")){
-                                p_num.push_back(number);
+                                p_num.push(number);
                                 help -> getPlayer();
                         }
 
                         if (message.find("Judge") || message.find("judge")){
-                                j_num.push_back(number);
+                                j_num.push(number);
                                 help -> getJudge();
                         }
                         asked_player_judge.erase(number);
