@@ -30,7 +30,7 @@ class Delegator{
                             // if the message contains player a in it and if player a is assigned to the ai, then we send the question to the ai
                             // if the message contains player b in it and if player b is assigned to the ai, then we send the question to the ai
                             if(message.find("Player A") || message.find("player A") || message.find("Player a") || message.find("player a")){
-                                if(g->playerLetter(p_num) = "A"){
+                                if(g->playerLetter(p_num) == "A"){
                                         twilio -> send_sms(p_num, message);
                                 }
                                 else{
@@ -39,7 +39,7 @@ class Delegator{
                             }
                             
                             if(message.find("Player B") || message.find("player B") || message.find("Player b") || message.find("player b")){
-                                if(g->playerLetter(p_num) = "B"){
+                                if(g->playerLetter(p_num) == "B"){
                                         twilio -> send_sms(p_num, message);
                                     }
                                 else{
@@ -65,7 +65,7 @@ class Delegator{
                                 j_num.push(number);
                                 help -> getJudge();  
                         }
-                        asked_player_judge.erase(number)
+                        asked_player_judge.erase(number);
                 }
                 else{
                      help -> error();
