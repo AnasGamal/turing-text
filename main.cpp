@@ -1,4 +1,11 @@
 #include <iostream>
+#include "Delegator.h"
+#include "GameBook.h"
+#include "HelpTool.h"
+#include "Human.h"
+#include "Twilio.h"
+#include "AiClass.h"
+
 using namespace std;
 
 int main() {
