@@ -10,9 +10,9 @@ using namespace std;
 
 class Game {
 private:
-    HumanAgent* human_agent;
-    Evaluator* evaluator;
-    AI* ai_agent;
+    Human* human_agent;
+    Human* evaluator;
+    Ai* ai_agent;
     vector<string> prompts;
     map<string, string> responses;
     Results* result;
@@ -27,12 +27,20 @@ public:
     }
 
     void start() {
+        // Randomly assign roles to players
+        bool human_is_judge = rand() % 2 == 0;
+        string human_role = human_is_judge ? "Judge" : "Player";
+        string ai_role = human_is_judge ? "Player" : "Judge";
+
+        // Create player objects based on their roles
+        HumanAgent* human_agent = human_is_judge ? new Judge() : new Player();
+        AI* ai_agent = !human_is_judge ? new Judge() : new Player();
+
+        // Set the instance of each player to the game
+        Game game(human_agent, evaluator, ai_agent);
+
         // Send prompt to human agent and AI agent
         cout << "Sending prompt to " << human_agent->get_type() << " and " << ai_agent->get_type() << endl;
-
-        // Determine the role of each player
-        string humanRole = findRole(human_agent->get_type());
-        string aiRole = findRole(ai_agent->get_type());
 
         // Receive responses from human agent and AI agent
         string humanResponse, aiResponse;
@@ -41,12 +49,12 @@ public:
 
         // Send responses to evaluator
         cout << "Sending responses to " << evaluator->get_type() << endl;
-        cout << human_agent->get_type() << " (" << humanRole << ") response: " << humanResponse << endl;
-        cout << ai_agent->get_type() << " (" << aiRole << ") response: " << aiResponse << endl;
+        cout << human_agent->get_type() << " (" << human_role << ") response: " << humanResponse << endl;
+        cout << ai_agent->get_type() << " (" << ai_role << ") response: " << aiResponse << endl;
     }
 
 
-    void createPlayer(phoneNum){
+    void createPlayer(string phoneNum){
         playerAB[phoneNum] = defineLetter();
     }
 
