@@ -133,7 +133,7 @@ These classes interact and collaborate to manage the game sessions, handle commu
 
 ![Turing text class diagram](https://user-images.githubusercontent.com/95186419/234611287-b925b082-aac1-41ab-9397-9a1466adb020.png)
 
+![Turing text sequence diagram](https://user-images.githubusercontent.com/95186419/234634377-43af77f6-2537-4501-8743-c5d8ff32c519.png)
 
-![Turing text sequence diagram](https://user-images.githubusercontent.com/95186419/234611215-3174a1eb-b476-4db3-a08a-ec6f852d62a9.png)
 
 
