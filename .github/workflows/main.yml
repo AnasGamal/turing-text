@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - evaluate
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout evaluate branch
+        uses: actions/checkout@v2
+        with:
+          ref: evaluate
+          fetch-depth: 0
+
+      - name: List changed files
+        run: |
+          echo "Changed files:"
+          git diff --name-only origin/main..origin/evaluate
+        working-directory: ${{ github.workspace }}
+
+      - name: Merge each file to main
+        run: |
+          for file in $(git diff --name-only origin/main..origin/evaluate); do
+            echo "Testing $file"
+            mkdir -p build
+            cd build
+            cmake ..
+            make
+            ./test/$file.test
+            if [ $? -ne 0 ]; then
+              echo "Failed to build and test $file"
+              exit 1
+            fi
+            cd ..
+            echo "Merging $file to main"
+            git checkout main
+            git merge --no-ff evaluate -m "Merge $file from evaluate branch"
+            git push
+          done
+        working-directory: ${{ github.workspace }}
