@@ -1,13 +1,4 @@
-#include <iostreamm>
-#include "Delegator.h"
-#include "HelpTool.h"
-#include "Human.h"
-#include "AI.h"
-#include "Twilio.h"
-#include "Results.h"
-#include "GameBook.h"
-#include "Game.h"
-#include "Server.h"
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -20,15 +11,15 @@ int main() {
 	getline(cin, phoneNum);
 	player.setPhoneNumber(phoneNum);
 	
-	cout << "Please enter your Twilio phone number." << endl;'
+	cout << "Please enter your Twilio phone number." << endl;
 	getline(cin, twilioNum);
 	player.setTwilioNumber(twilioNum);
 
-	cout << "Please enter your account SID." << endl;'
+	cout << "Please enter your account SID." << endl;
 	getline(cin, accountSID);
 	player.setAccountSID(accountSID);
 
-	cout << "Please enter your Twilio authorization token." << endl;'
+	cout << "Please enter your Twilio authorization token." << endl;
 	getline(cin, authToken);
 	player.setAuthToken(authToken);
 
