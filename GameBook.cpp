@@ -10,16 +10,16 @@ using namespace std;
 
 class Game {
 private:
-    Human* human_agent;
-    Human* evaluator;
-    Ai* ai_agent;
+    Human *human_agent;
+    Human *evaluator;
+    Ai *ai_agent;
     vector<string> prompts;
     map<string, string> responses;
-    Results* result;
+    Results *result;
     map<string, string> playerAB;
 
 public:
-    Game(Human* human_agent, Human* evaluator, AI* ai_agent, Results* result) {
+    Game(Human *human_agent, Human *evaluator, AI *ai_agent, Results *result) {
         this->human_agent = human_agent;
         this->evaluator = evaluator;
         this->ai_agent = ai_agent;
@@ -33,7 +33,7 @@ public:
         string ai_role = human_is_judge ? "Player" : "Judge";
 
         // Create player objects based on their roles
-        HumanAgent* human_agent = human_is_judge ? new Judge() : new Player();
+        HumanAgent *human_agent = human_is_judge ? new Judge() : new Player();
         AI* ai_agent = !human_is_judge ? new Judge() : new Player();
 
         // Set the instance of each player to the game
@@ -87,12 +87,12 @@ public:
             aiPrediciton = "A";
             score = Results.getScore();
             comparison = Results.getComparison();
-            Results* results = new Results(score, comparison);
+            Results *results = new Results(score, comparison);
         } else {
             aiPrediciton = "B";
             score = Results.getScore();
             comparison = Results.getComparison();
-            Results* results = new Results(score, comparison);
+            Results *results = new Results(score, comparison);
         }
     }
 
@@ -106,11 +106,11 @@ public:
         }
     }
 
-    void save_game_data(GameBook* game_book) {
+    void save_game_data(GameBook *game_book) {
         game_book->addGame(this);
     }
 
-    void receive_message(Player* player, string message) {
+    void receive_message(Player *player, string message) {
         this->responses[player->get_type()] = message;
         if (this->responses.size() == 3) {
             end();
@@ -128,11 +128,11 @@ public:
         return instance;
     }
 
-    void addGame(Game* game) {
+    void addGame(Game *game) {
         active_games.push_back(game);
     }
 
-    void removeGame(Game* game) {
+    void removeGame(Game *game) {
         auto it = find(active_games.begin(), active_games.end(), game);
         if (it != active_games.end()) {
             active_games.erase(it);
@@ -140,7 +140,7 @@ public:
     }
     // check if phone number is in an active game, if so, returns the game.
     Game* inGame(string phoneNum) {
-        for(Game* game : active_games){
+        for(Game *game : active_games){
             if(game->getHuman_agent().getPhoneNumber() || game->getEvaluator().getPhoneNumber() == phoneNum) {
                 return game;
             } else {
