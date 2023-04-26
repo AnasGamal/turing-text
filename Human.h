@@ -7,7 +7,7 @@ using namespace std;
 class Human {
 	
 	private:
-	string role;
+	string phoneNumber;
 	string accountSID;
 	string authToken;
 	string twilioNum;
@@ -15,8 +15,6 @@ class Human {
 	public:
 	void setPhoneNumber(string phoneNumber);
 	string getPhoneNumber();
-	void setRole(string role);
-	string getRole();
 	void setAccountSID(string accountSID);
 	string getAccountSID();
 	void setAuthToken(string authToken) {
