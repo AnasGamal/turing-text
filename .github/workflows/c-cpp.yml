@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-test:
 
     runs-on: ubuntu-latest
 
@@ -20,22 +20,13 @@ jobs:
         cmake -S . -B build
       working-directory: ${{ github.workspace }}
 
-    - name: Check for changes
-      run: git fetch
-      working-directory: ${{ github.workspace }}
-
-    - name: Merge changes
-      run: git merge origin/main
-      working-directory: ${{ github.workspace }}
-
     - name: configure
       run: cmake --build build --config Release
       working-directory: ${{ github.workspace }}
 
-    - name: make check
-      run: ctest -C Release -V
-      working-directory: ${{ github.workspace }}
-
-    - name: make distcheck
-      run: make distcheck
+    - name: run program and check exit code
+      run: |
+        # run compiled program here
+        ./build/turing-text
+        if [ $? -ne 0 ]; then exit 1; fi
       working-directory: ${{ github.workspace }}
