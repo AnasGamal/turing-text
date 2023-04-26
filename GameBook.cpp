@@ -70,14 +70,8 @@ public:
         // Set the instance of each player to the game
         new Game(human_agent, evaluator, ai_agent, results);
 
-        // Randomly assign roles to players
-        srand(time(nullptr));
-        int randomNum = rand() % 2;
-        if (randomNum == 0) {
-            return "A";
-        } else {
-            return "B";
-        }
+        //assigns Letter to players
+        createPlayer(human_agent->getPhoneNumber());
 
         /*
         // Send prompt to human agent and AI agent
