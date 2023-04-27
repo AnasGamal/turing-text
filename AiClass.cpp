@@ -1,4 +1,4 @@
-#include "Ai.h"
+#include "AiClass.h"
 
 Ai::Ai() {
     api_key = read_api_key_from_file();
