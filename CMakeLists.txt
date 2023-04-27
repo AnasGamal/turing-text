@@ -13,6 +13,8 @@ file(GLOB HEADERS *.h)
 # Add the header files to the target
 target_sources(turing-text PRIVATE ${HEADERS})
 
-# Find and include the cpr library
+# Find and include the cpr, json library
 find_package(cpr REQUIRED)
+find_package(nlohmann_json 3.2.0 REQUIRED)
+target_link_libraries(turing-text PRIVATE nlohmann_json::nlohmann_json)
 target_link_libraries(turing-text PRIVATE cpr::cpr)
