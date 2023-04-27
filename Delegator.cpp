@@ -6,7 +6,6 @@
 #include "AiClass.h"
 #include "HelpTool.h"
 #include "Twilio.h"
-
 using namespace std;
 
 class Delegator{
@@ -83,7 +82,7 @@ class Delegator{
 
         void pair_human_agent_evaluator(string p_num, string j_num){
                 help -> getPair();
-                Game g = new Game(p_num, j_num);
+                Game* g = new Game(p_num, j_num);
                 GB -> addGame(g);
                 g->start();
         }
