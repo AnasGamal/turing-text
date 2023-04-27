@@ -2,6 +2,10 @@
 #include <string>
 #include <queue>
 #include <set>
+#include <GameBook.h>
+#include <AiClass.h>
+#include <HelpTool.h>
+#include <Twilio.h>
 using namespace std;
 
 class Delegator{
@@ -10,7 +14,7 @@ class Delegator{
         set<string> asked_player_judge;
         Gamebook* GB;
         Ai* ai;
-        Helptool* help;
+        HelpTool* help;
         TwilioClient* twilio;
 
         public:
