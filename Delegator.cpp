@@ -34,7 +34,7 @@ class Delegator{
                                         twilio -> send_sms(player_num(), message);
                                 }
                                 else{
-                                        ai -> askGPT(message, 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);
+                                        ai -> askGPT(message, "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");
                                 }
                             }
 
@@ -44,7 +44,7 @@ class Delegator{
                                         twilio -> send_sms(player_num(), message);
                                 }
                                 else{
-                                        ai -> askGPT(message, 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);
+                                        ai -> askGPT(message, "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");
                                 }
                             }
                         }
