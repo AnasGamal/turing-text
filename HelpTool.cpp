@@ -1,6 +1,3 @@
-#ifndef HELPTOOL_H
-#define HELPTOOL_H
-
 #include <iostream>
 #include <string>
 using namespace std;
@@ -15,13 +12,31 @@ class Helptool{
   string error = "Your response is invalid.";
 
 public:
-  string getinstructions();
-  string getInitial();
-  string getPlayer();
-  string getJudge();
-  string getWait();
-  string getPair();
-  string getError();
-};
+  string getinstructions(){
+    return instructions;
+  }
 
-#endif
+  string getInitial(){
+    return initial_request;
+  }
+
+  string getPlayer(){
+    return player;
+  }
+
+  string getJudge(){
+    return judge;
+  }
+
+  string getWait(){
+    return waitlist;
+  }
+
+  string getPair(){
+    return pair;
+  }
+
+  string getError(){
+    return error;
+  }
+};
