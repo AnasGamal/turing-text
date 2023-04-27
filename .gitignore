@@ -1,0 +1,29 @@
+# Compiled object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Compiled dynamic libraries
+*.so
+*.dylib
+
+# Compiled executables
+*.exe
+*.out
+
+# CMake build directory
+build/
+
+# Twilio authentication file
+TwilioAuth.txt
+
+# IDE files
+.vscode/
+.idea/
+
+# Ignore build artifacts and dependencies
+/bin/
+/lib/
+/target/
+/node_modules/
