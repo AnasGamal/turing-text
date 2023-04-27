@@ -20,3 +20,5 @@ class Delegator{
         void analyze_request(string message, string number);
         void pair_human_agent_evaluator(string p_num, string j_num);
 };
+
+#endif
