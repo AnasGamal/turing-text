@@ -14,6 +14,5 @@ file(GLOB HEADERS *.h)
 target_sources(turing-text PRIVATE ${HEADERS})
 
 # Find and include the cpr library
-find_package(cpr CONFIG REQUIRED)
-set(cpr_DIR cpr)
+find_package(cpr REQUIRED)
 target_link_libraries(turing-text PRIVATE cpr::cpr)
