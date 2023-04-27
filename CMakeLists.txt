@@ -30,3 +30,12 @@ target_link_libraries(turing-text PRIVATE cpr::cpr)
 
 # Link the nlohmann_json library
 target_link_libraries(turing-text PRIVATE nlohmann_json::nlohmann_json)
+
+# Find Boost
+find_package(Boost REQUIRED COMPONENTS system)
+
+# Include Boost directories
+include_directories(${Boost_INCLUDE_DIRS})
+
+# Link Boost libraries to your executable
+target_link_libraries(turing-text ${Boost_LIBRARIES})
