@@ -12,10 +12,10 @@ class Delegator{
         queue<string> p_num;
         queue<string> j_num;
         set<string> asked_player_judge;
-        Gamebook* GB;
-        Ai* ai;
+        GameBook* GB;
+        AiClass* ai;
         HelpTool* help;
-        TwilioClient* twilio;
+        Twilio* twilio;
 
         public:
         void analyze_request(string message, string number){
@@ -82,7 +82,7 @@ class Delegator{
 
         void pair_human_agent_evaluator(string p_num, string j_num){
                 help -> getPair();
-                Game g = new Game(p_num, j_num);
+                Game* g = new Game(p_num, j_num);
                 GB -> addGame(g);
                 g->start();
         }
