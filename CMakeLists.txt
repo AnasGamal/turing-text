@@ -38,4 +38,4 @@ find_package(Boost REQUIRED COMPONENTS system)
 include_directories(${Boost_INCLUDE_DIRS})
 
 # Link Boost libraries to your executable
-target_link_libraries(turing-text ${Boost_LIBRARIES})
+target_link_libraries(turing-text PRIVATE ${Boost_LIBRARIES})
