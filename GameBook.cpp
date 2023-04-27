@@ -56,6 +56,11 @@ public:
         this->results = results;
     }
 
+    Game(Human *human_agent, Human *evaluator) {
+        this->human_agent = human_agent;
+        this->evaluator = evaluator;
+    }
+
     void start() {
         /*
         bool human_is_judge = rand() % 2 == 0;
