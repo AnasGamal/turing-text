@@ -9,7 +9,7 @@ class Delegator{
         queue<string> j_num;
         set<string> asked_player_judge;
         Gamebook* GB;
-        AI* ai;
+        Ai* ai;
         Helptool* help;
         TwilioClient* twilio;
 
