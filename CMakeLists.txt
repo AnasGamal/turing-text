@@ -7,8 +7,9 @@ include(CPM.cmake)
 # Add nlohmann_json as a dependency
 CPMAddPackage(
     NAME nlohmann_json
-    GITHUB_REPOSITORY nlohmann/json
     VERSION 3.9.1
+    GITHUB_REPOSITORY "nlohmann/json"
+    GIT_TAG "db78ac1d7716f56fc9f1b030b715f872f93964e4"
 )
 
 # Add Boost as a dependency
