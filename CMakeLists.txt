@@ -23,6 +23,7 @@ CPMAddPackage(
         NAME cpr
         VERSION 1.10.1
         GITHUB_REPOSITORY "libcpr/cpr"
+        GIT_TAG "1.10.1"
 )
 
 
