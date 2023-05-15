@@ -46,4 +46,4 @@ target_link_libraries(turing-text PRIVATE cpr::cpr)
 target_link_libraries(turing-text PRIVATE nlohmann_json::nlohmann_json)
 
 # Find and include the Boost library
-target_link_libraries(TuringText PRIVATE Boost::asio Boost::property_tree Boost::beast)
+target_link_libraries(turing-text PRIVATE Boost::asio Boost::property_tree Boost::beast)
