@@ -8,9 +8,9 @@ include(CPM.cmake)
 # Add nlohmann_json as a dependency
 CPMAddPackage(
     NAME nlohmann_json
-    VERSION 3.11.2
+    VERSION 3.9.1
     GITHUB_REPOSITORY "nlohmann/json"
-    GIT_TAG "bc889afb4c5bf1c0d8ee29ef35eaaf4c8bef8a5d"
+    GIT_TAG "v3.9.1"
 )
 
 # Add Boost as a dependency
@@ -18,14 +18,14 @@ CPMAddPackage(
         NAME Boost
         VERSION 1.81.0
         GITHUB_REPOSITORY "boostorg/boost"
-        GIT_TAG "da041154c6bac1a4aa98254a7d6819059e8ac0b0"
+        GIT_TAG "boost-1.81.0"
 )
 # Add cpr as a dependency
 CPMAddPackage(
         NAME cpr
-        VERSION  1.10.0
+        VERSION 1.10.0
         GITHUB_REPOSITORY "libcpr/cpr"
-        GIT_TAG "0817715923c9705e68994eb52ef9df3f6845beba"
+        GIT_TAG "1.10.0"
 )
 
 
