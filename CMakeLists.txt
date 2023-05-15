@@ -22,16 +22,9 @@ CPMAddPackage(
 # Add cpr as a dependency
 CPMAddPackage(
         NAME cpr
-        VERSION  1.10.2
+        VERSION  1.10.0
         GITHUB_REPOSITORY "libcpr/cpr"
-        GIT_TAG "32fd1453194c37d5136577ee55629b863a42333f"
-)
-# Add zlib as a dependency
-CPMAddPackage(
-        NAME zlib
-        VERSION  1.12.13
-        GITHUB_REPOSITORY "madler/zlib"
-        GIT_TAG "04f42ceca40f73e2978b50e93806c2a18c1281fc"
+        GIT_TAG "0817715923c9705e68994eb52ef9df3f6845beba"
 )
 
 
