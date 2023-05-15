@@ -27,3 +27,4 @@ TwilioAuth.txt
 /lib/
 /target/
 /node_modules/
+/cmake-build-debug
