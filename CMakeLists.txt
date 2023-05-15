@@ -9,7 +9,6 @@ CPMAddPackage(
     NAME nlohmann_json
     VERSION 3.9.1
     GITHUB_REPOSITORY "nlohmann/json"
-    GIT_TAG "v3.9.1"
 )
 
 # Add Boost as a dependency
@@ -24,7 +23,6 @@ CPMAddPackage(
         NAME cpr
         VERSION 1.10.0
         GITHUB_REPOSITORY "libcpr/cpr"
-        GIT_TAG "1.10.0"
 )
 
 
