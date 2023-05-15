@@ -6,6 +6,7 @@
 #include <queue>
 #include <set>
 #include "GameBook.h"
+#include "Game.h"
 #include "AiClass.h"
 #include "HelpTool.h"
 #include "Twilio.h"
