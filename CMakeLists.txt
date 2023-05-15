@@ -11,6 +11,21 @@ CPMAddPackage(
     VERSION 3.9.1
 )
 
+# Add Boost as a dependency
+CPMAddPackage(
+        NAME Boost
+        VERSION 1.81.0
+        GITHUB_REPOSITORY "boostorg/boost"
+        GIT_TAG "boost-1.81.0"
+)
+# Add cpr as a dependency
+CPMAddPackage(
+        NAME cpr
+        VERSION  1.10.0
+        GITHUB_REPOSITORY "libcpr/cpr"
+        GIT_TAG "0817715923c9705e68994eb52ef9df3f6845beba"
+)
+
 # Find all source files in the current directory
 file(GLOB SOURCES *.cpp)
 
@@ -25,17 +40,10 @@ file(GLOB HEADERS *.hpp)
 target_sources(turing-text PRIVATE ${HEADERS})
 
 # Find and include the cpr library
-find_package(cpr REQUIRED)
 target_link_libraries(turing-text PRIVATE cpr::cpr)
 
-# Link the nlohmann_json library
+# Find and include the nlohmann_json library
 target_link_libraries(turing-text PRIVATE nlohmann_json::nlohmann_json)
 
-# Find Boost
-find_package(Boost REQUIRED COMPONENTS system)
-
-# Include Boost directories
-include_directories(${Boost_INCLUDE_DIRS})
-
-# Link Boost libraries to your executable
-target_link_libraries(turing-text PRIVATE ${Boost_LIBRARIES})
+# Find and include the Boost library
+target_link_libraries(TuringText PRIVATE Boost::asio Boost::property_tree Boost::beast)
