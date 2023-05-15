@@ -17,7 +17,7 @@ CPMAddPackage(
         NAME Boost
         VERSION 1.81.0
         GITHUB_REPOSITORY "boostorg/boost"
-        GIT_TAG "boost-1.81.0"
+        GIT_TAG "da041154c6bac1a4aa98254a7d6819059e8ac0b0"
 )
 # Add cpr as a dependency
 CPMAddPackage(
@@ -26,6 +26,14 @@ CPMAddPackage(
         GITHUB_REPOSITORY "libcpr/cpr"
         GIT_TAG "0817715923c9705e68994eb52ef9df3f6845beba"
 )
+# Add zlib as a dependency
+CPMAddPackage(
+        NAME zlib
+        VERSION  1.12.13
+        GITHUB_REPOSITORY "madler/zlib"
+        GIT_TAG "04f42ceca40f73e2978b50e93806c2a18c1281fc"
+)
+
 
 # Find all source files in the current directory
 file(GLOB SOURCES *.cpp)
