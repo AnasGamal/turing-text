@@ -34,8 +34,7 @@ file(GLOB SOURCES *.cpp)
 add_executable(turing-text ${SOURCES})
 
 # Find all header files in the current directory
-file(GLOB HEADERS *.h)
-file(GLOB HEADERS *.hpp)
+file(GLOB HEADERS *.h *.hpp)
 
 # Add the header files to the target
 target_sources(turing-text PRIVATE ${HEADERS})
